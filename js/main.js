@@ -1,13 +1,21 @@
 
 let engine = document.getElementById('button-2');
 let tbody = document.getElementById('tbo');
-console.log(tbody);
+
 let result = document.getElementById('result')
-console.log(engine)
+let how = document.getElementById('how');
+let show = document.getElementById('show');
+
+show.onclick = function() {
+    how.style.display = "flex";
+}
 
 let back = document.getElementById('back');
-
+let back2 = document.getElementById('back2');
 back.onclick = function() {
+    location.href = 'index.html';
+}
+back2.onclick = function() {
     location.href = 'index.html';
 }
 
@@ -45,10 +53,10 @@ engine.onclick = function() {
         arr.push(team);
 
     }
+    
     console.log(arr)
-    arr.sort(ar => {
-        return ar.score;
-    })
+    arr.sort((a, b) => b.score - a.score);
+    console.log(arr)
 
     for(let i = 0; i< arr.length ; i++) {
         let myTr = document.createElement("tr");
